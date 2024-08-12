@@ -47,34 +47,33 @@ export default {
 </script>
 
 <style scoped>
-
 .review-detail {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #e50914; 
   border-radius: 8px;
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: #000; 
+  color: #e50914;
 }
 
 .review-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #e50914;
+  color: #e50914; 
   text-align: center;
 }
 
 .review-content {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #bdc3c7;
+  color: #e0e0e0; 
 }
 
 .review-author,
 .review-date {
   font-size: 1rem;
-  color: #95a5a6;
+  color: #e50914; 
   text-align: center;
   margin-top: 10px;
 }
@@ -84,12 +83,12 @@ export default {
   height: auto;
   margin: 20px 0;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
 }
 
 .loading {
   text-align: center;
   font-size: 1.5rem;
-  color: #95a5a6;
+  color: #e50914;
 }
 </style>
