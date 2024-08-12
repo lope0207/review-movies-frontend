@@ -16,28 +16,60 @@
   </div>
 </template>
 
+<script>
+import axios from 'axios';
+import SearchBar from './SearchBar.vue';
+
+export default {
+  components: {
+    SearchBar
+  },
+  data() {
+    return {
+      reviews: [],
+      searchQuery: ''
+    };
+  },
+  mounted() {
+    this.fetchReviews();
+  },
+  methods: {
+    async fetchReviews() {
+      try {
+        const response = await axios.get('http://localhost:1337/api/reviews');
+        this.reviews = response.data.data || [];
+      } catch (error) {
+        console.error('Error fetching reviews:', error);
+      }
+    },
+    handleSearch(query) {
+      this.searchQuery = query;
+    }
+  },
+  computed: {
+    filteredReviews() {
+      const query = this.searchQuery ? this.searchQuery.toLowerCase() : '';
+      return this.reviews.filter(review =>
+        (review.attributes.Title || '').toLowerCase().includes(query)
+      );
+    }
+  }
+};
+</script>
+
 <style scoped>
 .review-list {
-  margin-top: 20px;
-  padding: 0 10px;
+  padding: 20px;
 }
 
 .search-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
   margin-bottom: 20px;
-}
-
-.search-container .search-bar {
-  width: 100%;
-  max-width: 600px; 
 }
 
 .review-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 20px; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -45,24 +77,25 @@
 
 .review-item {
   background-color: #000;
-  color: #e50914; 
+  color: #fff;
+  border: 1px solid #e70000;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
 .review-item:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .review-item h2 {
+  color: #e70000;
   margin-bottom: 10px;
 }
 
 .review-item p {
   color: #ccc;
-  text-align: left;
 }
 
 .review-item a {
@@ -72,10 +105,5 @@
 
 .review-item a:hover {
   text-decoration: underline;
-}
-
-.review-item p {
-  margin-top: 10px;
-  font-size: 14px;
 }
 </style>

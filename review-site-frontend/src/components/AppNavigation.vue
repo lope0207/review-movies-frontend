@@ -17,16 +17,15 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos personalizados para el enlace Home */
 .home-link {
-  color: #fff; /* Texto blanco */
-  background-color: #e50914; /* Fondo rojo */
-  padding: 10px 20px; /* Relleno del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  text-decoration: none; /* Sin subrayado */
+  color: #fff;
+  background-color: #e50914; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  text-decoration: none; 
 }
 
 .home-link:hover {
-  background-color: #c81010; /* Rojo oscuro en hover */
+  background-color: #c81010; 
 }
 </style>

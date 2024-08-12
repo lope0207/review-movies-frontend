@@ -21,9 +21,9 @@
 <style>
 /* Navigation bar styling */
 .navbar {
-  background-color: #000; 
+  background-color: #000;
   padding: 10px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-menu {
@@ -49,17 +49,17 @@
 }
 
 .navbar-item a:hover {
-  background-color: #e70000; 
-  color: #fff; 
+  background-color: #e70000;
+  color: #fff;
 }
 
 /* Footer styling */
 .footer {
-  background-color: #000; 
+  background-color: #000;
   color: #fff;
   padding: 15px 0;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); 
-  text-align: center; 
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 .footer-content {
