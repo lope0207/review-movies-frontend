@@ -47,6 +47,11 @@ export default {
 </script>
 
 <style scoped>
+
+body {
+background-color:red;
+}
+
 .review-detail {
   max-width: 800px;
   margin: 20px auto;
