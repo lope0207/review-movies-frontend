@@ -26,43 +26,52 @@ export default {
 </script>
 
 <style>
+/* Global styles */
 body {
-background-color:red;
+  margin: 0;
+  padding: 0;
+  background-color: #e9ecef;
+  font-family: 'Arial', sans-serif;
 }
 
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+/* Container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-header, footer {
-  text-align: center;
-}
-
-main {
-  margin-top: 60px; 
-  padding-bottom: 60px; 
-}
-
+/* Header styling */
 header {
+  background-color: #007bff; 
+  color: #fff;
+  padding: 15px 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* Footer styling */
 footer {
+  background-color: #343a40; 
+  color: #fff;
+  padding: 15px 20px;
   position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
 }
 
+/* Main content styling */
 main {
-  padding-top: 50px; 
-  padding-bottom: 50px; 
+  padding-top: 70px;
+  padding-bottom: 70px; 
+  background-color: #ffffff; 
 }
 </style>
