@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import axios from '../axios';
+import axios from '../axios'; // Asegúrate de que esta ruta sea correcta
 
 export default {
   data() {
@@ -19,7 +19,7 @@ export default {
     };
   },
   async created() {
-    const reviewId = this.$route.params.id;
+    const reviewId = Number(this.$route.params.id); 
     await this.fetchReview(reviewId);
   },
   methods: {
@@ -40,6 +40,9 @@ export default {
       }
     },
     parseContent(content) {
+      if (typeof content === 'string') return content; 
+
+      
       return content.map(paragraph => paragraph.children.map(child => child.text).join('')).join('<br>');
     }
   }

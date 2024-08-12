@@ -2,11 +2,15 @@
   <div>
     <nav class="navbar">
       <ul class="navbar-menu">
-        <li class="navbar-item"><a href="#home">Home</a></li>
+        <!-- Usar <router-link> para manejar la navegación en Vue -->
+        <li class="navbar-item">
+          <router-link to="/" class="nav-link">Home</router-link>
+        </li>
       </ul>
     </nav>
 
     <main class="container">
+      <!-- Contenido renderizado por Vue Router -->
       <router-view></router-view>
     </main>
 
@@ -17,6 +21,12 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
 
 <style>
 /* Navigation bar styling */
@@ -38,19 +48,27 @@
   margin: 0 20px;
 }
 
-.navbar-item a {
-  color: #e70000;
+.nav-link {
+  color: #fff;
+  background-color: #e50914; /* Color rojo brillante */
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1em;
-  padding: 10px 15px;
+  font-size: 1.5em; /* Tamaño más grande */
+  padding: 15px 30px; /* Padding aumentado para tamaño más grande */
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar-item a:hover {
-  background-color: #e70000;
+.nav-link:hover {
+  background-color: #c81010; /* Color rojo oscuro en hover */
   color: #fff;
+}
+
+/* Especificar estilos para los estados activos de los enlaces */
+.router-link-active.nav-link,
+.router-link-exact-active.nav-link {
+  background-color: #c81010; /* Color rojo oscuro para el enlace activo */
+  color: #fff; /* Asegúrate de que el texto sea blanco en el estado activo */
 }
 
 /* Footer styling */
